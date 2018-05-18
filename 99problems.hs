@@ -18,8 +18,15 @@ myLength :: [a] -> Int
 myLength [] = 0
 myLength (x:xs) = 1 + myLength xs
 
-myReverse l = 
-    [l !! (length(l)-num) | num <- [1..length(l)]]
+myReverse :: [a] -> [a]
+myReverse xs = 
+    [xs !! (length(xs)-num) | num <- [1..length(xs)]]
 
-isPalindrome l =
-    l == reverse l
+isPalindrome :: Eq a => [a] -> Bool
+isPalindrome xs =
+    xs == reverse xs
+
+myFlatten :: [[a]] -> [a]
+myFlatten [x] = x
+myFlatten (x:xs) = 
+    x ++ myFlatten xs
