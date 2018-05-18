@@ -10,3 +10,7 @@ myButLast [x] = error "list too short"
 myButLast (x:xs) 
     | length(xs) == 1 = x
     | otherwise = myButLast xs
+
+elementAt :: [a] -> Int -> a
+elementAt (x:xs) 0 = x
+elementAt (x:xs) n = elementAt xs (n-1)
