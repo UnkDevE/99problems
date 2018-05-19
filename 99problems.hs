@@ -32,7 +32,7 @@ myFlatten (x:xs) =
     x ++ myFlatten xs
 
 compress :: (Eq a) => [a] -> [a]
-compress [x] = [x]
+compress xs = xs
 compress (x:xs)
     | x `elem` xs = compress xs
     | otherwise = x:compress xs
